@@ -1,4 +1,325 @@
+<!--
+  * 欢迎页面
+  * 由 北斗星移 www.beidouxingyi.cn 提供技术支持
+-->
+
 <!doctype html>
 <html>
-    hello world!
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>欢迎 - 北斗星移</title>
+    <script>
+        // 异步加载统计鸟脚本
+        setTimeout(() => {
+            !(siteId => {
+                'use strict';
+                var w = window;
+                var d = document;
+                var u = '//api.tongjiniao.com/c?_=' + siteId;
+                var s = document.createElement('script');
+                var r = document.getElementsByTagName('script')[0];
+                s.type = 'text/javascript';
+                s.setAttribute('charset', 'UTF-8');
+                s.async = true;
+                s.src = u;
+                r.parentNode.insertBefore(s, r);
+            })('646053844036673536');
+        }, 0);
+    </script>
+</head>
+
+<body>
+    <style>
+        :root {
+            --bg-color-light: #EDF0F4;
+            --bg-color-dark: #474C53;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 10px;
+            user-select: none;
+            background: var(--bg-color-light);
+        }
+        
+        noscript {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100vh;
+            color: black;
+            background: white;
+            display: block;
+        }
+        
+        center {
+            padding: 5vh 0 0 0;
+        }
+        
+        div.main {
+            min-width: min(500px, 100%);
+            max-width: 100%;
+            border: 1px solid white;
+            border-radius: 2px;
+            padding: 10px 20px 25px 20px;
+            box-shadow: 8px 8px 20px rgba(55,99,170,0.1);
+            color: black;
+            background: linear-gradient(0deg, #F3F5F8, #EDF0F4);
+            transition: all 150ms;
+            display: inline-block;
+        }
+        
+        div.main:hover {
+            background: linear-gradient(#F3F5F8, #F1F3F6);
+        }
+
+        div.main:active {
+            box-shadow: 8px 8px 20px rgba(55,99,170,0.05);
+        }
+        
+        @media only screen and (max-width: 360px) {
+            body {
+                margin: 0;
+            }
+            
+            center {
+                padding: 0;
+            }
+            
+            div.main {
+                border-radius: 0;
+                padding: 0 10px 15px 10px;
+            }
+        }
+
+        div.loader {
+            width: 25px;
+            height: 25px;
+            margin: 0 auto;
+            border: 4px solid transparent;
+            border-top: 4px solid black;
+            border-right: 4px solid black;
+            border-radius: 50%;
+            animation: spin 2000ms linear infinite;    
+            display: inline-block;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: translate(0, 3.5px) rotate(0deg);
+            }
+            100% {
+                transform: translate(0, 3.5px) rotate(360deg);
+            }
+        }
+        
+        div.verification {
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            margin: 15px 0 0 0;
+            border: 1px solid #BDBDBD;
+            padding: 5px;
+            background: #EAEEF2;
+            font-size: 16px;
+            font-weight: normal;
+            display: inline-block;
+        }
+        
+        div.verification-btn {
+            position: relative;
+            top: 2.5px;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #B5B5B5;
+            border-radius: 3px;
+            cursor: pointer;
+            background: #F1F4F6;
+            display: inline-block;
+        }
+        
+        div.verification-btn:hover {
+            border: 1px solid #56A5E1;
+            box-shadow: 0 0 10px rgba(34,68,149,0.10) inset;
+        }
+        
+        div.verification-btn::before,
+        div.verification-btn::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            border-radius: 4px;
+            height: 2px;
+            background-color: white;
+            transition: all 0.2s ease;
+            display: none;
+        }
+
+        div.verification-btn::before {
+            width: 30%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        div.verification-btn::after {
+            width: 80%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        div.verification-btn.checked::before {
+            width: 100%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        div.verification-btn.checked::after {
+            width: 100%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        div.verification-btn.checked {
+            background-color: #D9EEDA;
+        }
+        
+        div.verification span.btn-tips {
+            position: relative;
+            top: -13px;
+            color: grey;
+            font-size: 12px;
+            display: inline-block;
+        }
+        
+        div.verification span:not(.btn-tips) {
+            position: relative;
+            top: -7px;
+            display: inline-block;
+        }
+        
+        div.about {
+            margin: 15px 0 50px 0;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 15px;
+        }
+        
+        a {
+            color: #006FA7;
+            text-decoration: none;
+            text-underline-offset: 3px;
+        }
+        
+        a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+        
+        div.footer {
+            position: fixed;
+            top: calc(100% - 30px);
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            color: grey;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        a.reloader {
+            display: none;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            
+        }
+    </style>
+    
+    <noscript>
+        <center>
+            <h2>欢迎</h2>
+            <h3>北斗星移 beidouxingyi.cn</h3>
+            <div style="
+                border: 1px solid #ccc;
+                padding: 8px 15px 10px 15px;
+                color: #aaa;
+                text-align: left;
+                display: inline-block;
+            ">
+                Ray ID: ::RAY_ID::
+                <br>
+                Your IP: ::CLIENT_IP::
+            </div>
+        </center>
+    </noscript>
+    
+    <center>
+        <div class="main">
+            <h2>
+                欢迎
+            </h2>
+            <span class="tips">
+                <span>北斗星移 beidouxingyi.cn</span>
+            </span>
+            <br>
+            <br>
+            <div style="
+                border: 1px solid #ccc;
+                padding: 8px 15px 10px 15px;
+                color: #aaa;
+                text-align: left;
+                display: inline-block;
+            ">
+                Ray ID: ::RAY_ID::
+                <br>
+                Your IP: ::CLIENT_IP::
+            </div>
+        </div>
+        <div class="about">
+            <span>关于此网页</span>
+            <br>
+            <br>
+            <span>
+                123456
+            </span>
+        </div>
+    </center>
+    
+    <div class="footer">
+        <a href="https://www.beidouxingyi.cn/" target="_blank">北斗星移</a>
+        提供技术支持
+        |
+        Telegram 频道:
+        <a href="https://t.me/bdxy01/" target="_blank">@bdxy01</a>
+    </div>
+    
+    <a id="reloader" href></a>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', e => {
+            let objSiteName = document.querySelector('span[host]');
+            let objDivMain  = document.querySelector('div.main');
+            let objSpanTips = document.querySelector('span.tips');
+            let objH2       = document.querySelector('h2');
+            let objDivAbout = document.querySelector('div.about');
+            let objReloader = document.getElementById('reloader');
+            
+            setInterval(() => {
+                objDivAbout.style.width = objDivMain.clientWidth.toString() + 'px';
+            }, 100);
+            
+            function getRandomInt(min, max)
+            {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+        });
+    </script>
+</body>
 </html>
