@@ -13,6 +13,11 @@
     <meta name="description" content="北斗星移网是一个多功能在线平台。">
     <title>北斗星移网</title>
     <style>
+        :root {
+            --bg-color-light: #EDF0F4;
+            --bg-color-dark: #474C53;
+        }
+        
         * {
             box-sizing: border-box;
             white-space: nowrap;
@@ -20,7 +25,7 @@
         
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+            background-color: var(--bg-color-light);
             color: #333;
             transition: background-color 0.3s, color 0.3s;
         }
@@ -69,13 +74,13 @@
         .footer {
             position: fixed;
             bottom: 0;
-            left: 0;
-            width: 100%;
+            left: 20px;
+            width: calc(100% - 40px);
             height: 80px;
-            line-height: 40px;
+            line-height: 30px;
             margin-top: 40px;
-            color: #f0f0f0;
-            background-color: #333;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
             text-align: center;
         }
         
@@ -94,14 +99,14 @@
             text-decoration: underline;
         }
         
-        .dark-theme a, .footer a {
+        .dark-theme a {
             color: #C1D2FF;
         }
     </style>
     <script>
         // 异步加载统计鸟脚本 (`beidouxingyi.cn`)
         setTimeout(() => {
-                !(siteId => {
+            !(siteId => {
                 'use strict';
                 var w = window;
                 var d = document;
@@ -113,7 +118,7 @@
                 s.async = true;
                 s.src = u;
                 r.parentNode.insertBefore(s, r);
-                })('634538047328141312');
+            })('634538047328141312');
         }, 0);
     </script>
 </head>
@@ -123,19 +128,24 @@
             <a href="https://www.beidouxingyi.cn/" target="_blank" class="link">
                 北斗星移网
                 <br>
-                （点击进入）
+                &uarr; 点击进入
             </a>
         </div>
         <div class="description">
-            <p>多功能在线平台</p>
+            <p>&laquo; 多功能在线平台 &raquo;</p>
             <p>联系邮箱: <a href="mailto:beidou@bdxy.cc">beidou@bdxy.cc</a></p>
+            <p>
+                备案列表：
+                <br>
+                <br>
+                <a href="https://icp.gov.moe/?keyword=20244096" target="_blank">萌ICP备20244096号</a>
+            </p>
         </div>
         <div class="footer">
             &copy; <a href="https://www.beidouxingyi.cn/" target="_blank">北斗星移</a> 保留所有权利
-            |
+            <br>
             <a href="https://www.beidouxingyi.cn/" target="_blank">北斗星移</a> 提供技术支持
             <br>
-            <a href="https://icp.gov.moe/?keyword=20244096" target="_blank">萌ICP备20244096号</a>
         </div>
     </div>
     <script>
