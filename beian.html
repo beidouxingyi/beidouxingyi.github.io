@@ -81,7 +81,7 @@
             text-decoration: underline;
         }
         
-        .dark-theme :not(.footer) a:not(.link), :not(.dark-scheme) .footer a {
+        .dark-theme a {
             color: #C1D2FF;
         }
     </style>
@@ -126,7 +126,7 @@
         </div>
     </div>
     <script>
-        try
+        if (false) try // disabled
         {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
             {
