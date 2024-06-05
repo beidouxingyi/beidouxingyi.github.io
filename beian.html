@@ -13,25 +13,34 @@
     <meta name="description" content="北斗星移网是一个多功能在线平台。">
     <title>北斗星移网</title>
     <style>
+        * {
+            box-sizing: border-box;
+            white-space: nowrap;
+        }
+        
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f0f0;
             color: #333;
             transition: background-color 0.3s, color 0.3s;
         }
+        
         .dark-theme {
             background-color: #333;
             color: #f0f0f0;
         }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+        
         .header {
             text-align: center;
             margin-bottom: 40px;
         }
+        
         .link {
             display: inline-block;
             font-size: 26px;
@@ -45,15 +54,18 @@
             border-radius: 10px;
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
+        
         .link:hover {
             background-color: #333;
             color: #fff;
             border-color: #fff;
         }
+        
         .description {
             text-align: center;
             margin-bottom: 40px;
         }
+        
         .footer {
             position: fixed;
             bottom: 0;
@@ -66,6 +78,7 @@
             background-color: #333;
             text-align: center;
         }
+        
         .dark-theme .footer {
             background-color: #f0f0f0;
             color: #333;
@@ -81,7 +94,7 @@
             text-decoration: underline;
         }
         
-        .dark-theme a {
+        .dark-theme a, .footer a {
             color: #C1D2FF;
         }
     </style>
