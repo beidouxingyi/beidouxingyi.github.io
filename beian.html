@@ -90,11 +90,19 @@
         </div>
     </div>
     <script>
-        // 用于切换深浅主题的示例代码
-        const themeSwitcher = document.body;
-        themeSwitcher.addEventListener('click', () => {
-            themeSwitcher.classList.toggle('dark-theme');
-        });
+        try
+        {
+            if (
+                localStorage.getItem('dark-mode') === 'on'
+                || (
+                    localStorage.getItem('dark-mode') === 'system'
+                    && window.matchMedia
+                    && window.matchMedia('(prefers-color-scheme: dark)').matches
+                )
+            ){
+                document.body.classList.add('dark-theme');
+            }
+        } catch (error) {}
     </script>
 </body>
 </html>
