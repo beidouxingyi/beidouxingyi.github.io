@@ -77,7 +77,7 @@
             text-underline-offset: 3px;
         }
 
-        a:hover {
+        a:not(.link):hover {
             text-decoration: underline;
         }
 
@@ -85,6 +85,24 @@
             color: #C1D2FF;
         }
     </style>
+    <script>
+        // 异步加载统计鸟脚本 (`beidouxingyi.cn`)
+        setTimeout(() => {
+                !(siteId => {
+                'use strict';
+                var w = window;
+                var d = document;
+                var u = `//api.tongjiniao.com/c?_=${siteId}`;
+                var s = document.createElement('script');
+                var r = document.getElementsByTagName('script')[0];
+                s.type = 'text/javascript';
+                s.setAttribute('charset', 'UTF-8');
+                s.async = true;
+                s.src = u;
+                r.parentNode.insertBefore(s, r);
+                })('634538047328141312');
+        }, 0);
+    </script>
 </head>
 <body>
     <div class="container">
@@ -110,14 +128,8 @@
     <script>
         try
         {
-            if (
-                localStorage.getItem('dark-mode') === 'on'
-                || (
-                    localStorage.getItem('dark-mode') === 'system'
-                    && window.matchMedia
-                    && window.matchMedia('(prefers-color-scheme: dark)').matches
-                )
-            ){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            {
                 document.body.classList.add('dark-theme');
             }
         } catch (error) {}
